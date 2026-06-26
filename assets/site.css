@@ -91,14 +91,17 @@ h1,h2,h3{font-family:var(--display);font-weight:560;line-height:1.04;
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-scrim{position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(46,32,24,.30)0%,rgba(46,32,24,.06)26%,rgba(46,32,24,.12)50%,rgba(46,32,24,.78)100%),
-    linear-gradient(90deg,rgba(46,32,24,.58)0%,rgba(46,32,24,.30)34%,rgba(46,32,24,.04)64%,rgba(46,32,24,0)100%)}
+    /* pionowy: mocne, pełnej szerokości przyciemnienie u dołu pod całym blokiem tekstu */
+    linear-gradient(180deg,rgba(46,32,24,.38)0%,rgba(46,32,24,.12)20%,rgba(46,32,24,.40)56%,rgba(46,32,24,.90)100%),
+    /* poziomy: nie gaśnie do zera po prawej - utrzymuje próg kontrastu pod 'sercu/Płocka' */
+    linear-gradient(90deg,rgba(46,32,24,.60)0%,rgba(46,32,24,.42)38%,rgba(46,32,24,.26)70%,rgba(46,32,24,.20)100%)}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:var(--maxw);
   margin:0 auto;padding:0 28px 64px;color:var(--cream)}
-.hero-inner .eyebrow{text-shadow:0 1px 16px rgba(20,12,8,.5)}
+.hero-inner .eyebrow{color:#E8A87C!important;
+  text-shadow:0 1px 3px rgba(20,12,8,.85),0 2px 18px rgba(20,12,8,.7)}
 .hero h1{font-size:clamp(2.6rem,7vw,5.6rem);max-width:14ch;color:var(--cream);
   font-weight:540;font-variation-settings:"SOFT" 50,"WONK" 1;
-  text-shadow:0 2px 28px rgba(20,12,8,.5)}
+  text-shadow:0 1px 3px rgba(20,12,8,.8),0 2px 30px rgba(20,12,8,.65)}
 .hero .hero-sub{max-width:54ch;margin:22px 0 26px;font-size:1.12rem;line-height:1.62;
   color:rgba(243,234,217,.94);text-shadow:0 1px 18px rgba(20,12,8,.5)}
 .hero-meta{position:absolute;top:24px;right:28px;z-index:2;text-align:right;
@@ -135,9 +138,10 @@ section{padding:88px 0}
 /* ---- Register (spis treści apartamentów) ---- */
 .register{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .register li{border-bottom:1px solid var(--line)}
-.reg-link{display:grid;grid-template-columns:auto 1fr auto auto;gap:28px;align-items:center;
-  padding:26px 6px;text-decoration:none;color:inherit;position:relative;transition:.25s}
-.reg-link:hover{background:var(--paper);padding-left:18px;padding-right:18px}
+/* miniatura pokoju ZAWSZE widoczna (gość najpierw chce zobaczyć wnętrze), folio, nazwa, metraż */
+.reg-link{display:grid;grid-template-columns:148px auto 1fr auto;gap:26px;align-items:center;
+  padding:18px 6px;text-decoration:none;color:inherit;position:relative;transition:.25s}
+.reg-link:hover{background:var(--paper);padding-left:16px;padding-right:16px}
 .reg-folio{font-family:var(--display);font-size:2.2rem;color:var(--brass);
   font-weight:600;letter-spacing:0;min-width:2.4ch;font-variation-settings:"SOFT" 50,"WONK" 1}
 .reg-name{font-family:var(--display);font-size:1.7rem;font-weight:560}
@@ -145,10 +149,11 @@ section{padding:88px 0}
   color:var(--muted);font-weight:400;letter-spacing:.01em;margin-top:3px}
 .reg-meta{font-family:var(--body);font-size:14px;letter-spacing:.04em;color:var(--muted);
   text-align:right;white-space:nowrap}
-.reg-thumb{width:0;height:78px;overflow:hidden;border-radius:2px;transition:width .3s ease;background:var(--cream-2)}
-.reg-thumb img{width:118px;height:78px;object-fit:cover}
-.reg-link:hover .reg-thumb{width:118px}
-.reg-arrow{color:var(--brick);font-size:1.2rem}
+.reg-meta .reg-go{display:block;margin-top:6px;font-family:var(--display);font-style:italic;
+  color:var(--brick);letter-spacing:0;font-size:15px}
+.reg-thumb{width:148px;height:104px;overflow:hidden;border-radius:2px;background:var(--cream-2)}
+.reg-thumb img{width:148px;height:104px;object-fit:cover;transition:transform .5s ease}
+.reg-link:hover .reg-thumb img{transform:scale(1.05)}
 
 /* ---- Zig-zag spreads (rejestr 01-09) ---- */
 .spread{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;
@@ -334,8 +339,13 @@ section{padding:88px 0}
 }
 @media(max-width:560px){
   .masonry,.amen{columns:1}
-  .reg-link{grid-template-columns:auto 1fr;gap:16px}
-  .reg-meta,.reg-thumb{display:none}
+  /* mobile: miniatura ZOSTAJE (to jej najbardziej szuka gość), metraż chowamy */
+  .reg-link{grid-template-columns:112px 1fr;gap:16px;padding:14px 4px}
+  .reg-thumb{width:112px;height:80px}
+  .reg-thumb img{width:112px;height:80px}
+  .reg-folio{display:none}
+  .reg-meta{display:none}
+  .reg-name{font-size:1.35rem}
   .hero-spread .folio-big{opacity:.16}
   /* masthead: pasek rośnie zamiast przycinać, długi napis schowany, plakietka zostaje */
   .masthead .wrap{height:auto;min-height:34px;padding-top:7px;padding-bottom:7px;
