@@ -90,7 +90,9 @@ h1,h2,h3{font-family:var(--display);font-weight:560;line-height:1.04;
   align-items:flex-end;overflow:hidden;background:var(--espresso)}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-scrim{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(46,32,24,.16)0%,rgba(46,32,24,0)30%,rgba(46,32,24,.04)54%,rgba(46,32,24,.56)100%)}
+  background:
+    linear-gradient(180deg,rgba(46,32,24,.30)0%,rgba(46,32,24,.06)26%,rgba(46,32,24,.12)50%,rgba(46,32,24,.78)100%),
+    linear-gradient(90deg,rgba(46,32,24,.58)0%,rgba(46,32,24,.30)34%,rgba(46,32,24,.04)64%,rgba(46,32,24,0)100%)}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:var(--maxw);
   margin:0 auto;padding:0 28px 64px;color:var(--cream)}
 .hero-inner .eyebrow{text-shadow:0 1px 16px rgba(20,12,8,.5)}
@@ -335,5 +337,10 @@ section{padding:88px 0}
   .reg-link{grid-template-columns:auto 1fr;gap:16px}
   .reg-meta,.reg-thumb{display:none}
   .hero-spread .folio-big{opacity:.16}
+  /* masthead: pasek rośnie zamiast przycinać, długi napis schowany, plakietka zostaje */
+  .masthead .wrap{height:auto;min-height:34px;padding-top:7px;padding-bottom:7px;
+    font-size:10px;letter-spacing:.16em;gap:12px}
+  .masthead .plaque span:not(.plaque-10){display:none}
+  .plaque-10{width:22px;height:22px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
