@@ -254,8 +254,16 @@ section{padding:88px 0}
 .route-legend b{font-family:var(--display);color:var(--brick);font-weight:600}
 
 /* ---- Mapa embed ---- */
-.mapbox{border:1px solid var(--line);border-radius:2px;overflow:hidden;line-height:0}
-.mapbox iframe{width:100%;height:380px;border:0;filter:saturate(.85) sepia(.06)}
+.mapbox{position:relative;border:1px solid var(--line);border-radius:2px;overflow:hidden;
+  line-height:0;background:var(--cream-2);min-height:380px}
+/* placeholder ramki podczas ładowania (zamiast gołego szarego prostokąta) */
+.mapbox::after{content:"Wczytywanie mapy…";position:absolute;inset:0;z-index:0;
+  display:flex;align-items:center;justify-content:center;color:var(--muted);
+  font-family:var(--display);font-style:italic;font-size:1.02rem;line-height:1.4;
+  letter-spacing:.02em;pointer-events:none}
+/* sepia mocno zredukowana - nazwy ulic czytelne; lekkie ocieplenie pod paletę */
+.mapbox iframe{position:relative;z-index:1;width:100%;height:380px;border:0;
+  filter:saturate(.96) contrast(1.03)}
 
 /* ---- Teaser cards (linki do podstron) ---- */
 .teasers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -309,11 +317,17 @@ section{padding:88px 0}
   overflow:hidden;background:var(--espresso)}
 .pagehead img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pagehead .ph-scrim{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(46,32,24,.18)0%,rgba(46,32,24,.12)45%,rgba(46,32,24,.78)100%)}
+  background:
+    /* pionowy: pełnoszerokie przyciemnienie pod całym blokiem tekstu (nie tylko dół) */
+    linear-gradient(180deg,rgba(46,32,24,.42)0%,rgba(46,32,24,.20)34%,rgba(46,32,24,.52)64%,rgba(46,32,24,.90)100%),
+    /* poziomy: utrzymuje próg kontrastu pod nadtytułem i H1 na jasnej cegle */
+    linear-gradient(90deg,rgba(46,32,24,.55)0%,rgba(46,32,24,.34)44%,rgba(46,32,24,.20)100%)}
 .pagehead .ph-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
   width:100%;padding:0 28px 48px;color:var(--cream)}
-.pagehead h1{color:var(--cream);font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch}
-.pagehead .eyebrow{color:var(--terra)}
+.pagehead h1{color:var(--cream);font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch;
+  text-shadow:0 1px 3px rgba(20,12,8,.8),0 2px 30px rgba(20,12,8,.6)}
+.pagehead .eyebrow{color:#E8A87C;
+  text-shadow:0 1px 3px rgba(20,12,8,.85),0 2px 18px rgba(20,12,8,.7)}
 
 .divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto}
 

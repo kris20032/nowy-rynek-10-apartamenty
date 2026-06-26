@@ -4,9 +4,16 @@
   var burger=document.querySelector('.nav-burger');
   var links=document.querySelector('.nav-links');
   if(burger&&links){
-    burger.addEventListener('click',function(){links.classList.toggle('open');});
+    burger.setAttribute('aria-expanded','false');
+    burger.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+    });
     links.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){links.classList.remove('open');});
+      a.addEventListener('click',function(){
+        links.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+      });
     });
   }
 
