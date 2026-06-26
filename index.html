@@ -1,454 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apartamenty Nowy Rynek 10 - butikowe apartamenty w sercu Płocka</title>
-<meta name="description" content="Klimatyczne, tematyczne apartamenty w odnowionej zabytkowej kamienicy w ścisłym centrum Płocka. Dwa kroki od Tumskiej, Katedry i bulwarów nad Wisłą. 9,2/10 w Booking, 689 opinii. Sprawdź dostępność.">
-<meta property="og:title" content="Apartamenty Nowy Rynek 10 - Płock, Stare Miasto">
-<meta property="og:description" content="Butikowe, tematyczne apartamenty w zabytkowej kamienicy. Ścisłe centrum, parking naprzeciwko, ocena 9,2/10 w Booking.">
-<meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nowy Rynek 10 - apartamenty z charakterem w sercu starego Płocka</title>
+<meta name="description" content="Dziewięć apartamentów z charakterem w odnowionej zabytkowej kamienicy przy Nowym Rynku 10 w Płocku. Odsłonięta cegła, drewniane belki i terakota, dwa kroki od Tumskiej. Na dobę albo na dłużej. 9,2/10 w 689 opiniach.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --cream:#FBF6EF; --cream-2:#F2E9DC; --sand:#E8D9C4;
-  --ink:#2A2320; --ink-2:#4B3F36; --muted:#8C8175;
-  --clay:#B05E3B; --clay-d:#8E4527; --clay-soft:rgba(176,94,59,.10);
-  --line:rgba(42,35,32,.12); --white:#fff;
-  --shadow:0 22px 60px -28px rgba(42,35,32,.45);
-  --shadow-sm:0 10px 30px -16px rgba(42,35,32,.4);
-  --font-display:'Fraunces',Georgia,serif;
-  --font-body:'Hanken Grotesk',system-ui,sans-serif;
-  --wrap:1180px; --r:14px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-.01em}
-.eyebrow{font-family:var(--font-body);font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-d)}
-section{padding:88px 0}
-.muted{color:var(--muted)}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:.96rem;padding:.85em 1.5em;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:.2s;letter-spacing:.01em}
-.btn .arr{transition:transform .2s}
-.btn:hover .arr{transform:translateX(3px)}
-.btn-accent{background:var(--clay);color:#fff;box-shadow:var(--shadow-sm)}
-.btn-accent:hover{background:var(--clay-d)}
-.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--clay);color:var(--clay-d)}
-.btn-light{background:#fff;color:var(--ink)}
-.btn-light:hover{background:var(--cream-2)}
-.btn-outline-light{border-color:rgba(255,255,255,.5);color:#fff}
-.btn-outline-light:hover{background:rgba(255,255,255,.12)}
-
-/* header */
-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:var(--wrap);margin:0 auto}
-.brand{display:flex;flex-direction:column;line-height:1.05}
-.brand .name{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:#fff;transition:color .3s}
-.brand .sub{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);transition:color .3s}
-.nav-links{display:flex;align-items:center;gap:30px}
-.nav-links a:not(.btn){font-weight:500;font-size:.94rem;color:rgba(255,255,255,.92);transition:color .2s}
-.nav-links a:not(.btn):hover{color:#fff}
-header.scrolled{background:rgba(251,246,239,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
-header.scrolled .brand .name{color:var(--ink)}
-header.scrolled .brand .sub{color:var(--clay-d)}
-header.scrolled .nav-links a:not(.btn){color:var(--ink-2)}
-header.scrolled .nav-links a:not(.btn):hover{color:var(--clay-d)}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;flex-direction:column;justify-content:center;gap:5px;align-items:center}
-.nav-toggle span{width:24px;height:2px;background:#fff;transition:.3s;border-radius:2px}
-header.scrolled .nav-toggle span{background:var(--ink)}
-
-/* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(34,26,20,.78) 0%,rgba(34,26,20,.5) 38%,rgba(34,26,20,.12) 70%,rgba(34,26,20,.32) 100%),linear-gradient(0deg,rgba(34,26,20,.55),transparent 45%)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:84px;padding-top:140px}
-.hero-copy{max-width:660px}
-.hero .eyebrow{color:#E9C9B4}
-.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);font-weight:600;margin:.32em 0 .28em;text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.hero .lead{font-size:clamp(1.05rem,1.7vw,1.28rem);color:rgba(255,255,255,.94);max-width:50ch;font-weight:400}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.hero-rating{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-weight:600;font-size:.96rem;letter-spacing:.01em}
-.hero-rating .score{background:#fff;color:var(--ink);font-family:var(--font-display);font-weight:700;padding:.18em .55em;border-radius:8px;font-size:1.02rem}
-.hero-rating .stars{color:#E9C9B4}
-
-/* facts strip */
-.facts{background:var(--ink);color:var(--cream)}
-.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.fact{padding:30px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
-.fact:last-child{border-right:0}
-.fact .k{font-family:var(--font-display);font-size:1.7rem;font-weight:600;color:#fff}
-.fact .v{font-size:.86rem;letter-spacing:.04em;color:rgba(251,246,239,.7);margin-top:4px}
-
-/* about split */
-.split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.split-art{position:relative}
-.split-art img{border-radius:var(--r);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
-.split-art::before{content:"";position:absolute;left:-16px;top:-16px;width:120px;height:120px;border:2px solid var(--clay-soft);border-radius:var(--r);z-index:-1}
-.split-copy h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin:.3em 0 .5em}
-.split-copy p+p{margin-top:1.05em}
-.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.about-tags span{font-size:.84rem;font-weight:600;color:var(--clay-d);background:var(--clay-soft);padding:.45em 1em;border-radius:999px}
-
-/* section head */
-.head{max-width:640px;margin-bottom:48px}
-.head.center{margin-left:auto;margin-right:auto;text-align:center}
-.head h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:.28em 0 .35em}
-.head p{color:var(--muted);font-size:1.05rem}
-
-/* gallery masonry */
-.gallery{background:var(--cream-2)}
-.masonry{columns:3;column-gap:18px}
-.tile{position:relative;margin-bottom:18px;break-inside:avoid;border-radius:var(--r);overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm)}
-.tile img{width:100%;transition:transform .6s ease}
-.tile:hover img{transform:scale(1.05)}
-.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;color:#fff;font-weight:600;font-size:.96rem;background:linear-gradient(0deg,rgba(34,26,20,.82),transparent);opacity:0;transition:.3s}
-.tile:hover figcaption{opacity:1}
-
-/* amenities */
-.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px}
-.amen{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--white);border:1px solid var(--line);border-radius:12px;transition:.2s}
-.amen:hover{border-color:var(--clay);box-shadow:var(--shadow-sm)}
-.amen .ic{flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;background:var(--clay-soft);border-radius:10px;color:var(--clay-d)}
-.amen .ic svg{width:22px;height:22px}
-.amen b{font-weight:600;font-size:.98rem}
-.amen small{display:block;color:var(--muted);font-size:.82rem;font-weight:400;margin-top:1px}
-
-/* location */
-.location{background:var(--cream-2)}
-.loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.loc-map iframe{width:100%;height:420px;border:0;border-radius:var(--r);box-shadow:var(--shadow);filter:saturate(.95)}
-.loc-list{list-style:none}
-.loc-list li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}
-.loc-list li:first-child{padding-top:0}
-.loc-list .place{font-weight:600;font-size:1.02rem}
-.loc-list .place small{display:block;color:var(--muted);font-weight:400;font-size:.84rem}
-.loc-list .dist{color:var(--clay-d);font-weight:600;white-space:nowrap;font-size:.92rem}
-.loc-note{margin-top:24px;font-size:.92rem;color:var(--muted)}
-
-/* reviews */
-.reviews{background:var(--ink);color:var(--cream)}
-.reviews .head h2{color:#fff}
-.reviews .head p{color:rgba(251,246,239,.72)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.rev-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:34px 28px;text-align:center}
-.rev-card .big{font-family:var(--font-display);font-size:3.2rem;font-weight:700;color:#fff;line-height:1}
-.rev-card .scale{color:#E9C9B4;font-size:1rem;font-weight:600;margin-top:2px}
-.rev-card .lab{margin-top:14px;font-weight:600;letter-spacing:.02em}
-.rev-card .sub{color:rgba(251,246,239,.66);font-size:.9rem;margin-top:4px}
-.rev-foot{text-align:center;margin-top:40px;color:rgba(251,246,239,.8);font-size:1.02rem;max-width:60ch;margin-left:auto;margin-right:auto}
-
-/* reservation CTA */
-.book{background:radial-gradient(circle at 80% 0%,var(--sand),transparent 55%),var(--cream)}
-.book-card{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:clamp(36px,5vw,64px);text-align:center;position:relative;overflow:hidden}
-.book-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--clay),var(--clay-d))}
-.book-card h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.35em}
-.book-card>p{color:var(--ink-2);max-width:54ch;margin:0 auto 32px;font-size:1.08rem}
-.book-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-.book-actions .btn{font-size:1.02rem;padding:1em 1.8em}
-.book-direct{margin-top:26px;font-size:.95rem;color:var(--muted)}
-.book-direct b{color:var(--clay-d)}
-
-/* contact + footer */
-.contact .split{align-items:start}
-.contact-info{list-style:none}
-.contact-info li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
-.contact-info .ic{flex:0 0 40px;width:40px;height:40px;display:grid;place-items:center;background:var(--clay-soft);border-radius:10px;color:var(--clay-d)}
-.contact-info .ic svg{width:20px;height:20px}
-.contact-info .lbl{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.contact-info .val{font-weight:600;font-size:1.05rem}
-footer{background:var(--ink);color:rgba(251,246,239,.66);padding:54px 0 30px}
-.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-brand .name{font-family:var(--font-display);font-size:1.4rem;color:#fff;font-weight:600}
-.foot-brand p{max-width:42ch;margin-top:8px;font-size:.92rem}
-.foot-links{display:flex;gap:28px;flex-wrap:wrap}
-.foot-links a{font-size:.92rem;color:rgba(251,246,239,.8)}
-.foot-links a:hover{color:#fff}
-.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px;font-size:.84rem}
-
-/* sticky mobile reserve */
-.sticky-reserve{display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 14px;gap:10px;background:rgba(251,246,239,.96);backdrop-filter:blur(8px);box-shadow:0 -1px 0 var(--line)}
-.sticky-reserve .btn{flex:1;justify-content:center;font-size:.95rem;padding:.85em}
-.sticky-reserve .sr-call{flex:0 0 auto;width:52px}
-
-/* lightbox */
-.lb{position:fixed;inset:0;z-index:90;background:rgba(20,15,11,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
-.lb.open{display:flex}
-.lb img{max-width:94vw;max-height:90vh;border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
-.lb-close{position:absolute;top:20px;right:26px;color:#fff;font-size:2.4rem;line-height:1;cursor:pointer;opacity:.85}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-
-@media(max-width:980px){
-  .split,.loc-grid{grid-template-columns:1fr;gap:36px}
-  .masonry{columns:2}
-  .amen-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
-  .facts .wrap{grid-template-columns:repeat(2,1fr)}
-  .fact:nth-child(2){border-right:0}
-  .fact:nth-child(1),.fact:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
-}
-@media(max-width:680px){
-  section{padding:64px 0}
-  .nav-links{position:fixed;inset:0 0 0 auto;width:min(82vw,320px);background:var(--cream);flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);transition:transform .3s;box-shadow:var(--shadow)}
-  .nav-links.open{transform:none}
-  .nav-links a:not(.btn){color:var(--ink-2)!important;font-size:1.1rem}
-  .nav-toggle{display:flex}
-  .nav-links .btn{width:100%;justify-content:center}
-  .masonry{columns:1}
-  .amen-grid,.rev-grid{grid-template-columns:1fr}
-  .hero .wrap{padding-bottom:108px}
-  .sticky-reserve{display:flex}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-<header id="hdr">
-  <div class="nav-inner">
-    <a class="brand" href="#top">
-      <span class="name">Apartamenty Nowy Rynek 10</span>
-      <span class="sub">Płock · Stare Miasto</span>
-    </a>
-    <nav class="nav-links" id="menu">
-      <a href="#obiekt">O obiekcie</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#udogodnienia">Udogodnienia</a>
-      <a href="#lokalizacja">Lokalizacja</a>
-      <a href="#opinie">Opinie</a>
-      <a class="btn btn-accent" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
-    </nav>
-    <button class="nav-toggle" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+<!-- masthead running header -->
+<div class="masthead"><div class="wrap">
+  <span class="run">Płock · Stare Miasto · Nowy Rynek 10</span>
+  <span class="plaque"><span class="plaque-10">10</span><span>est. w zabytkowej kamienicy</span></span>
+</div></div>
+
+<!-- nav -->
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">Nowy Rynek <span class="ten">10</span></a>
+  <ul class="nav-links">
+    <li><a href="apartamenty.html">Apartamenty</a></li>
+    <li><a href="apartament.html">Apartament</a></li>
+    <li><a href="kamienica.html">Kamienica</a></li>
+    <li><a href="okolica.html">Okolica</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="rezerwacja.html">Rezerwacja</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
+  <button class="nav-burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="hero-bg" src="img/hero.jpg" alt="Jasne wnętrze apartamentu pod drewnianymi belkami w kamienicy Nowy Rynek 10">
+  <div class="hero-scrim"></div>
+  <div class="hero-meta">
+    <div class="score">9,2<small>/10</small></div>
+    <div class="cap">689 opinii · Booking</div>
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow" style="color:var(--terra)">Nocleg butikowy · na dobę i na dłużej</span>
+    <h1>Zatrzymaj się w sercu starego Płocka</h1>
+    <p class="hero-sub">Dziewięć apartamentów z charakterem w odnowionej zabytkowej kamienicy przy Nowym Rynku 10 - odsłonięta cegła, drewniane belki i terakota, dwa kroki od deptaka Tumskiej i bulwarów nad Wisłą.</p>
+    <a class="btn btn-primary" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <img src="img/hero.jpg" alt="Jasny apartament z belkowanym stropem w kamienicy Nowy Rynek 10 w Płocku">
+<!-- fact strip -->
+<div class="facts"><div class="wrap">
+  <span><b>9</b> apartamentów</span><span class="dot">·</span>
+  <span><b>30-80</b> m²</span><span class="dot">·</span>
+  <span><b>9,2/10</b> Booking</span><span class="dot">·</span>
+  <span><b>2 min</b> do Tumskiej</span><span class="dot">·</span>
+  <span>parking naprzeciw <b>gratis</b></span><span class="dot">·</span>
+  <span>kawiarnia na miejscu</span>
+</div></div>
+
+<!-- intro editorial -->
+<section class="intro">
+  <div class="col">
+    <span class="eyebrow">Od progu</span>
+    <p class="dropcap">Kamienica przy Nowym Rynku 10 stała tu, zanim ktokolwiek z nas się urodził. Odnowiona od piwnic po skosy poddasza, dziś mieści dziewięć apartamentów - i każdy z nich ma własne imię, własny kolor i własną historię. W jednym ściana z wypalonej cegły sięga sufitu, w drugim lawenda kładzie się na skosach, w trzecim szmaragdowa sofa i palmy zamykają dzień jak dobra książka. To nie jest hotel z korytarzem identycznych pokoi. To dom, w którym zatrzymujesz się na dobę albo na cały tydzień, parzysz kawę w „Pierwszej Kawie" na parterze i wychodzisz prosto na Stare Miasto.</p>
+  </div>
+</section>
+
+<!-- register 01-09 -->
+<section class="sec-alt brickbg">
   <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">Butikowe apartamenty · zabytkowa kamienica</span>
-      <h1>Zamieszkaj w sercu zabytkowego Płocka</h1>
-      <p class="lead">Klimatyczne, tematyczne apartamenty w odnowionej kamienicy na Starym Mieście - dwa kroki od Tumskiej, Katedry i bulwarów nad Wisłą.</p>
-      <div class="hero-actions">
-        <a class="btn btn-accent" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność <span class="arr">→</span></a>
-        <a class="btn btn-outline-light" href="tel:+48666209961">Zadzwoń 666 209 961</a>
-      </div>
-      <div class="hero-rating">
-        <span class="score">9,2</span>
-        <span><span class="stars">★★★★★</span> Znakomity · 689 opinii w Booking</span>
-      </div>
+    <div class="sec-head">
+      <div><span class="sec-num">Spis treści</span><h2>Dziewięć apartamentów, dziewięć historii</h2></div>
+      <a class="btn btn-ghost" href="apartamenty.html">Cały rejestr</a>
     </div>
+    <ul class="register">
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">01</span>
+        <span class="reg-name">Kominkowy<small>Cegła do sufitu i dwa nocne światła nad łóżkiem</small></span>
+        <span class="reg-meta">55 m² · 2 sypialnie · do 4 osób</span>
+        <span class="reg-thumb"><img src="img/kominkowy.jpg" alt="Apartament Kominkowy"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">02</span>
+        <span class="reg-name">Ceglany<small>Wypalona cegła, antyki i lustro w złotej ramie</small></span>
+        <span class="reg-meta">40 m² · studio · do 2 osób</span>
+        <span class="reg-thumb"><img src="img/ceglany.jpg" alt="Apartament Ceglany"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">03</span>
+        <span class="reg-name">Lawendowy<small>Lawendowe ściany pod skosami, mosiężne detale</small></span>
+        <span class="reg-meta">45 m² · 1 sypialnia · do 3 osób</span>
+        <span class="reg-thumb"><img src="img/about.jpg" alt="Apartament Lawendowy"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">04</span>
+        <span class="reg-name">Penthouse<small>Otwarta przestrzeń pod belkami, najwyższe piętro kamienicy</small></span>
+        <span class="reg-meta">80 m² · 2 sypialnie · do 5 osób</span>
+        <span class="reg-thumb"><img src="img/hero.jpg" alt="Apartament Penthouse"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">05</span>
+        <span class="reg-name">Tropikalny<small>Szmaragdowa sofa, palmy i kot, który nie schodzi ze ściany</small></span>
+        <span class="reg-meta">38 m² · studio · do 2 osób</span>
+        <span class="reg-thumb"><img src="img/tropikalny.jpg" alt="Apartament Tropikalny"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">06</span>
+        <span class="reg-name">Industrialny<small>Surowa cegła, puder i skóra w kolorze musztardy</small></span>
+        <span class="reg-meta">50 m² · 1 sypialnia · do 4 osób</span>
+        <span class="reg-thumb"><img src="img/industrial.jpg" alt="Apartament Industrialny"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">07</span>
+        <span class="reg-name">Czerwony<small>Czerwone draperie, terakota i salon jak z kroniki</small></span>
+        <span class="reg-meta">35 m² · studio · do 2 osób</span>
+        <span class="reg-thumb"><img src="img/studio.jpg" alt="Apartament Czerwony"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">08</span>
+        <span class="reg-name">Zielony<small>Butelkowa zieleń, drewno i obraz prowansalskiej uliczki</small></span>
+        <span class="reg-meta">30 m² · 1 sypialnia · do 2 osób</span>
+        <span class="reg-thumb"><img src="img/zielony.jpg" alt="Apartament Zielony"></span>
+      </a></li>
+      <li><a class="reg-link" href="apartament.html">
+        <span class="reg-folio">09</span>
+        <span class="reg-name">Papuzi<small>Papuga na ścianie, rattan i mosiężna lampa</small></span>
+        <span class="reg-meta">42 m² · 1 sypialnia · do 3 osób</span>
+        <span class="reg-thumb"><img src="img/papuga.jpg" alt="Apartament Papuzi"></span>
+      </a></li>
+    </ul>
   </div>
 </section>
 
-<!-- FACTS -->
-<section class="facts" style="padding:0">
-  <div class="wrap">
-    <div class="fact"><div class="k">9</div><div class="v">tematycznych apartamentów</div></div>
-    <div class="fact"><div class="k">Centrum</div><div class="v">ścisłe Stare Miasto</div></div>
-    <div class="fact"><div class="k">Parking</div><div class="v">bezpłatny, naprzeciwko</div></div>
-    <div class="fact"><div class="k">9,6</div><div class="v">ocena lokalizacji w Booking</div></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="obiekt">
+<!-- teaser okolicy (zajawka mapy) -->
+<section>
   <div class="wrap split">
-    <div class="split-art reveal"><img src="img/about.jpg" alt="Loftowy salon apartamentu z drewnianymi belkami i ciepłymi fotelami"></div>
-    <div class="split-copy reveal">
-      <span class="eyebrow">O obiekcie</span>
-      <h2>Charakter zabytkowej kamienicy, komfort współczesnego apartamentu</h2>
-      <p class="muted">Nowy Rynek 10 to odnowiona, zabytkowa kamienica w samym sercu Płocka. Dziewięć apartamentów, każdy z własnym klimatem - surowa cegła, drewniane belki, ciepłe ziemiste barwy i przemyślane detale. Od przytulnego studia, przez przestronne mieszkania z dwiema sypialniami, po apartament z prawdziwym charakterem.</p>
-      <p class="muted">W pełni wyposażone, gotowe na krótki city break i na dłuższy pobyt. Idealne dla par szukających klimatu, rodzin, turystów zwiedzających Płock i gości w podróży służbowej. Zamelduj się i poczuj się jak u siebie - tyle że w wyjątkowym miejscu.</p>
-      <div class="about-tags">
-        <span>Pobyty krótkie i długie</span>
-        <span>Dla par i rodzin</span>
-        <span>Studio · 1-2 sypialnie · Suite</span>
-        <span>30-80 m²</span>
+    <div class="text">
+      <span class="eyebrow">Okolica</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 16px">Wszystko, co warte zobaczenia, jest tu spacerem</h2>
+      <p class="narrow">Deptak Tumska zaczyna się dwie minuty od bramy. Katedra na Wzgórzu Tumskim - cztery. Bulwary nad Wisłą, gdzie miasto schodzi do rzeki - sześć. Narysowaliśmy to ręcznie, żeby było jasne: tu nie potrzebujesz samochodu, choć parking masz gratis naprzeciw.</p>
+      <p style="margin-top:18px"><a class="btn btn-ghost" href="okolica.html">Zobacz mapę Starego Płocka</a></p>
+    </div>
+    <div class="media inkmap-wrap">
+      <svg class="inkmap" viewBox="0 0 420 300" role="img" aria-label="Ręcznie rysowana mapa Starego Miasta z trasami spaceru">
+        <rect width="420" height="300" fill="#F8F2E6"/>
+        <g stroke="#2E2018" stroke-width="1" fill="none" opacity=".5" stroke-linecap="round">
+          <path d="M20 120 C90 100 150 150 230 120 S360 110 405 140" />
+          <path d="M40 40 C120 70 130 160 100 250" />
+          <path d="M250 30 C240 110 300 160 360 250" />
+          <path d="M20 210 C120 190 240 230 405 205" />
+        </g>
+        <g stroke="#A8472E" stroke-width="1.6" stroke-dasharray="2 5" fill="none" stroke-linecap="round">
+          <path d="M205 165 C175 150 150 140 120 120"/>
+          <path d="M205 165 C250 150 285 130 305 100"/>
+          <path d="M205 165 C235 200 280 220 330 235"/>
+        </g>
+        <g transform="translate(205,165)">
+          <path d="M0 0 C-9 -16 9 -16 0 0Z" fill="#A8472E"/>
+          <circle cx="0" cy="-11" r="6" fill="#A8472E"/>
+          <circle cx="0" cy="-11" r="2.4" fill="#F8F2E6"/>
+        </g>
+        <g font-family="Fraunces, serif" font-style="italic" fill="#2E2018" font-size="11">
+          <text x="208" y="183">Nowy Rynek 10</text>
+          <text x="78" y="112" fill="#A8472E">Tumska · 2 min</text>
+          <text x="288" y="92" fill="#A8472E">Katedra · 4 min</text>
+          <text x="300" y="250" fill="#A8472E">bulwary · 6 min</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- pasmo Kamienica i Pierwsza Kawa -->
+<section class="sec-dark">
+  <div class="wrap split rev">
+    <div class="media"><img src="img/industrial.jpg" alt="Surowa cegła i drewniane belki w odnowionej kamienicy Nowy Rynek 10" loading="lazy"></div>
+    <div class="text">
+      <span class="eyebrow" style="color:var(--terra)">Kamienica i „Pierwsza Kawa"</span>
+      <h2 style="color:var(--cream);font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 16px">Zabytkowe mury, świeżo zaparzona kawa</h2>
+      <p style="color:rgba(243,234,217,.86)" class="narrow">Kamienicę odnawiano z szacunkiem do tego, co zostawiła historia - cegłę odsłonięto zamiast zatynkować, belki zostały na wierzchu, terakota wróciła na podłogi. Na parterze działa kawiarnia „Pierwsza Kawa", więc poranek zaczynasz, nie wychodząc za próg.</p>
+      <p style="margin-top:18px"><a class="btn btn-ghost" style="color:var(--cream);border-color:var(--cream)" href="kamienica.html">Poznaj kamienicę</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- cytaty gości + ocena -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Opinie gości</span>
+    <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 40px;max-width:18ch">Co goście zapamiętują najczęściej</h2>
+    <div class="quotes">
+      <blockquote class="quote">„Lokalizacja idealna, na Stare Miasto i bulwary dosłownie kilka kroków. Apartament z klimatem, czuć starą kamienicę."<span class="by">Gość Booking</span></blockquote>
+      <blockquote class="quote">„Czysto, klimatycznie, parking tuż obok za darmo. Kawiarnia na dole to miły dodatek do poranka."<span class="by">Gość Booking</span></blockquote>
+      <blockquote class="quote">„Każdy apartament inny, my trafiliśmy na ceglany i był strzałem w dziesiątkę. Wrócimy."<span class="by">Gość Booking</span></blockquote>
+    </div>
+    <div class="score-row">
+      <div class="score-big">9,2<small>/10 w 689 opiniach na Booking</small></div>
+      <div class="score-big">9,6<small>ocena lokalizacji</small></div>
+      <div class="score-big">4,7<small>/5 w 163 opiniach Google</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- rezerwacja dwie drogi -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="sec-num">Rezerwacja</span><h2>Dwie drogi do klucza</h2></div></div>
+    <div class="paths">
+      <div class="path">
+        <h3>Przez Booking</h3>
+        <div class="price">Ocena 9,2/10 · 689 opinii</div>
+        <p>Sprawdź wolne terminy i ceny od ręki, z gwarancją rezerwacji i płatnością online. Najszybsza droga, jeśli planujesz z wyprzedzeniem.</p>
+        <p style="margin-top:22px"><a class="btn btn-primary" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a></p>
+      </div>
+      <div class="path dark">
+        <h3>Bezpośrednio u gospodyni</h3>
+        <div class="price" style="color:var(--terra)">Bez prowizji pośrednika</div>
+        <p>Napisz lub zadzwoń do Beaty - dłuższy pobyt, faktura, wcześniejsze zameldowanie czy pytanie o konkretny apartament załatwicie od razu, często taniej niż przez portal.</p>
+        <p style="margin-top:22px" class="btn-row">
+          <a class="btn btn-primary" href="https://wa.me/48666209961" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" style="color:var(--cream);border-color:var(--cream)" href="tel:+48666209961">666 209 961</a>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="galeria">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">Galeria wnętrz</span>
-      <h2>Każdy apartament opowiada inną historię</h2>
-      <p>Tematyczne wnętrza - od ceglanego studia, przez kominkowy apartament z dwiema sypialniami, po pokój z tropikalną tapetą. Zobacz, gdzie się zatrzymasz.</p>
+<!-- footer masthead -->
+<footer class="foot"><div class="wrap">
+  <div class="grid">
+    <div>
+      <div class="brand">Nowy Rynek <span class="ten">10</span></div>
+      <p style="color:rgba(243,234,217,.78);max-width:34ch">Dziewięć apartamentów z charakterem w zabytkowej kamienicy w sercu starego Płocka. Na dobę albo na dłużej.</p>
     </div>
-    <div class="masonry">
-      <figure class="tile reveal" data-full="img/g2.jpg"><img src="img/g2.jpg" alt="Apartament Kominkowy - sypialnia z surową cegłą i drewnianym łóżkiem"><figcaption>Apartament „Kominkowy" - 2 sypialnie</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g4.jpg"><img src="img/g4.jpg" alt="Loftowy salon z turkusową sofą i ceglaną ścianą"><figcaption>Salon w stylu loft</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g1.jpg"><img src="img/g1.jpg" alt="Sypialnia z ceglaną ścianą i ciepłymi barwami"><figcaption>Sypialnia z surową cegłą</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g3.jpg"><img src="img/g3.jpg" alt="Apartament Ceglany typu studio z wysokimi oknami"><figcaption>Apartament „Cegłany" - studio</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g8.jpg"><img src="img/g8.jpg" alt="Pokój z tropikalną tapetą i industrialnym detalem"><figcaption>Pokój z tropikalną tapetą</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g6.jpg"><img src="img/g6.jpg" alt="W pełni wyposażony aneks kuchenny z jadalnią pod skosami"><figcaption>W pełni wyposażony aneks</figcaption></figure>
-      <figure class="tile reveal" data-full="img/g7.jpg"><img src="img/g7.jpg" alt="Klimatyczna sypialnia z ceglaną ścianą i metalowym łóżkiem"><figcaption>Klimatyczna sypialnia</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- AMENITIES -->
-<section id="udogodnienia">
-  <div class="wrap">
-    <div class="head center reveal">
-      <span class="eyebrow">Udogodnienia</span>
-      <h2>Wszystko, czego potrzebujesz na miejscu</h2>
-      <p>Każdy apartament jest w pełni wyposażony - wchodzisz i mieszkasz, bez kompromisów.</p>
-    </div>
-    <div class="amen-grid">
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 11.8a11 11 0 0 1 14 0"/><path d="M8.5 15.2a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/></svg></span><div><b>Szybkie WiFi</b><small>W całym obiekcie, bezpłatnie</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8a3 3 0 0 1 3-3h8"/><path d="M3 12h11"/><path d="M18 3v7m-2-7v3a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3"/><path d="M18 12v9"/></svg></span><div><b>W pełni wyposażona kuchnia</b><small>Lodówka, płyta, mikrofala, ekspres</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2"/><path d="M3 12h13a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M9 20l-1 1m4-1l-1 1m4-1l-1 1"/></svg></span><div><b>Prywatna łazienka</b><small>Prysznic, suszarka, ręczniki i kosmetyki</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg></span><div><b>Klimatyzacja</b><small>Komfort także w upalne dni</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><b>Telewizor</b><small>W każdym apartamencie</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21v-6h14v6M19 13a4 4 0 0 0-4-4H5"/><circle cx="8" cy="6" r="1" fill="currentColor" stroke="none"/></svg></span><div><b>Bezpłatny parking</b><small>Miejski, naprzeciwko obiektu</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c4-1 6-4 6-9 0-3 2-5 5-5M21 21c-2 0-5-1-7-4M12 11c0-3 2-6 6-7"/></svg></span><div><b>Ogród i patio</b><small>Zielona przestrzeń do odpoczynku</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V9Z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2"/><path d="M3 21h15M8 6c0-1 .8-1.5.8-2.5M12 6c0-1 .8-1.5.8-2.5"/></svg></span><div><b>Kawiarnia na miejscu</b><small>„Pierwsza Kawa" (sezonowo)</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-2a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v2"/><path d="M3 18h13M6 13V9a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3M19 7v8"/><circle cx="19" cy="5" r="1.4"/></svg></span><div><b>Pokoje rodzinne</b><small>Przestrzeń dla całej rodziny</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="13" height="10" rx="2"/><path d="M17 9h2l1 2v3a2 2 0 0 1-2 2M7 16v3"/></svg></span><div><b>Żelazko i suszarka</b><small>Na wyposażeniu apartamentu</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><div><b>Dla niepalących</b><small>Czysto i komfortowo</small></div></div>
-      <div class="amen reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></svg></span><div><b>Samodzielne zameldowanie</b><small>Po kontakcie z gospodarzem</small></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION -->
-<section class="location" id="lokalizacja">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow">Lokalizacja</span>
-      <h2>Cały stary Płock masz pod nogami</h2>
-      <p>Ocena lokalizacji 9,6/10 w Booking nie bierze się znikąd - najlepsze miejsca w mieście są w zasięgu spaceru.</p>
-    </div>
-    <div class="loc-grid">
-      <div class="loc-map reveal">
-        <iframe title="Mapa - Apartamenty Nowy Rynek 10, Płock" src="https://maps.google.com/maps?q=52.5475119,19.6937603&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="reveal">
-        <ul class="loc-list">
-          <li><span class="place">Ulica Tumska <small>reprezentacyjny deptak Płocka</small></span><span class="dist">spacer</span></li>
-          <li><span class="place">Stary Rynek <small>serce starówki, kawiarnie i restauracje</small></span><span class="dist">spacer</span></li>
-          <li><span class="place">Wzgórze Tumskie i Katedra <small>najważniejszy zabytek miasta</small></span><span class="dist">spacer</span></li>
-          <li><span class="place">Bulwary nad Wisłą <small>widoki, spacery, relaks nad rzeką</small></span><span class="dist">spacer</span></li>
-          <li><span class="place">Parking miejski <small>bezpłatny, naprzeciwko kamienicy</small></span><span class="dist">naprzeciw</span></li>
-          <li><span class="place">Lotnisko Warszawa-Modlin</span><span class="dist">72 km</span></li>
-        </ul>
-        <p class="loc-note">Adres: Nowy Rynek 10, 09-400 Płock (mazowieckie).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews" id="opinie">
-  <div class="wrap">
-    <div class="head center reveal">
-      <span class="eyebrow">Opinie gości</span>
-      <h2>Goście wracają i polecają dalej</h2>
-      <p>Setki zadowolonych gości w serwisach rezerwacyjnych - oceny, które mówią same za siebie.</p>
-    </div>
-    <div class="rev-grid">
-      <div class="rev-card reveal"><div class="big">9,2</div><div class="scale">★★★★★ / 10</div><div class="lab">Znakomity w Booking</div><div class="sub">na podstawie 689 opinii</div></div>
-      <div class="rev-card reveal"><div class="big">9,6</div><div class="scale">★★★★★ / 10</div><div class="lab">Lokalizacja</div><div class="sub">jedna z najwyżej ocenianych w mieście</div></div>
-      <div class="rev-card reveal"><div class="big">4,7</div><div class="scale">★★★★★ / 5</div><div class="lab">Ocena w Google</div><div class="sub">na podstawie 163 opinii</div></div>
-    </div>
-    <p class="rev-foot">Czystość, klimatyczne wnętrza i położenie w samym centrum - to wracają w opiniach najczęściej. Sprawdź dostępne terminy i przekonaj się sam.</p>
-  </div>
-</section>
-
-<!-- RESERVATION -->
-<section class="book" id="rezerwacja">
-  <div class="wrap">
-    <div class="book-card reveal">
-      <span class="eyebrow">Rezerwacja</span>
-      <h2>Zarezerwuj swój pobyt w Płocku</h2>
-      <p>Sprawdź dostępne terminy i ceny online, albo zarezerwuj bezpośrednio u gospodarza - szybciej i z opieką od pierwszego kontaktu.</p>
-      <div class="book-actions">
-        <a class="btn btn-accent" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność w Booking <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="https://wa.me/48666209961" target="_blank" rel="noopener">Rezerwuj bezpośrednio - WhatsApp</a>
-      </div>
-      <p class="book-direct">Wolisz porozmawiać? Zadzwoń: <b>666 209 961</b> lub <b>784 792 259</b>. Rezerwując bezpośrednio masz <b>bezpośredni kontakt z gospodarzem</b> i pełną elastyczność.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="kontakt">
-  <div class="wrap split">
-    <div class="reveal">
-      <span class="eyebrow">Kontakt</span>
-      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin:.3em 0 .7em">Masz pytania? Chętnie pomożemy</h2>
-      <ul class="contact-info">
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z"/></svg></span><div><div class="lbl">Telefon</div><a class="val" href="tel:+48666209961">666 209 961</a> <span class="muted">· 784 792 259</span></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><div class="lbl">E-mail</div><a class="val" href="mailto:beatakaminska0@op.pl">beatakaminska0@op.pl</a></div></li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><div class="lbl">Adres</div><div class="val">Nowy Rynek 10, 09-400 Płock</div></div></li>
+    <div>
+      <h4>Adres</h4>
+      <ul>
+        <li>Nowy Rynek 10</li>
+        <li>09-400 Płock</li>
+        <li>Stare Miasto</li>
+        <li><a href="okolica.html">Jak dojść i co w okolicy</a></li>
       </ul>
-      <div class="hero-actions" style="margin-top:30px">
-        <a class="btn btn-accent" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="https://wa.me/48666209961" target="_blank" rel="noopener">Napisz na WhatsApp</a>
-      </div>
     </div>
-    <div class="split-art reveal"><img src="img/building.jpg" alt="Zabytkowa kamienica Apartamenty Nowy Rynek 10 w Płocku"></div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="name">Apartamenty Nowy Rynek 10</div>
-        <p>Butikowe, tematyczne apartamenty w odnowionej zabytkowej kamienicy w ścisłym centrum Płocka.</p>
-      </div>
-      <nav class="foot-links">
-        <a href="#obiekt">O obiekcie</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#udogodnienia">Udogodnienia</a>
-        <a href="#lokalizacja">Lokalizacja</a>
-        <a href="#rezerwacja">Rezerwacja</a>
-      </nav>
-    </div>
-    <div class="foot-bot">
-      <span>© 2026 Apartamenty Nowy Rynek 10 · Nowy Rynek 10, 09-400 Płock</span>
-      <span>Projekt strony: Krzysztof Brzeziński</span>
+    <div>
+      <h4>Kontakt</h4>
+      <ul>
+        <li>Gospodyni: Beata Kamińska</li>
+        <li><a href="tel:+48666209961">666 209 961</a></li>
+        <li><a href="https://wa.me/48666209961" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Rezerwuj na Booking</a></li>
+      </ul>
     </div>
   </div>
-</footer>
+  <div class="copy">
+    <span>© 2026 Apartamenty Nowy Rynek 10, Płock</span>
+    <span>Projekt strony: Krzysztof Brzeziński</span>
+  </div>
+</div></footer>
 
+<!-- sticky reserve (mobile) -->
 <div class="sticky-reserve">
-  <a class="btn btn-accent" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
-  <a class="btn btn-ghost sr-call" href="tel:+48666209961" aria-label="Zadzwoń"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z"/></svg></a>
+  <span class="sr-score">9,2/10<small>689 opinii · Booking</small></span>
+  <a class="btn btn-primary" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
 </div>
 
-<div class="lb" id="lb"><span class="lb-close">×</span><img src="" alt=""></div>
-
-<script>
-// header scroll
-const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
-// mobile menu
-const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-burger.addEventListener('click',()=>menu.classList.toggle('open'));
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-// reveal
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-// lightbox
-const lb=document.getElementById('lb'),lbimg=lb.querySelector('img');
-document.querySelectorAll('.tile').forEach(t=>t.addEventListener('click',()=>{lbimg.src=t.dataset.full;lb.classList.add('open')}));
-lb.addEventListener('click',()=>lb.classList.remove('open'));
-addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>

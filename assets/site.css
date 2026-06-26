@@ -1,0 +1,337 @@
+/* ===========================================================
+   NOWY RYNEK 10 — Kronika kamienicy (editorial pobytowy)
+   Fraunces (display) + Newsreader (body) · paleta ziemista
+   =========================================================== */
+
+:root{
+  --cream:#F3EAD9;        /* tło główne */
+  --cream-2:#ECDFC8;      /* sekcje alternatywne */
+  --paper:#F8F2E6;        /* karty / jaśniejsze pola */
+  --brick:#A8472E;        /* główny akcent (cegła) */
+  --terra:#C2703D;        /* drugorzędny (terakota) */
+  --espresso:#2E2018;     /* tekst / ciemny */
+  --law:#7C6E97;          /* lawenda (apartament) */
+  --brass:#B08A4F;        /* mosiądz (linie, folio, tabliczka) */
+  --line:rgba(46,32,24,.16);
+  --muted:#6f5f4d;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Newsreader", Georgia, "Times New Roman", serif;
+  --maxw:1200px;
+  --col:64ch;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--espresso);
+  font-family:var(--body);font-size:19px;line-height:1.72;
+  font-optical-sizing:auto;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.narrow{max-width:var(--col)}
+
+/* ---- Typografia ---- */
+h1,h2,h3{font-family:var(--display);font-weight:560;line-height:1.04;
+  letter-spacing:-.01em;margin:0;font-variation-settings:"SOFT" 40,"WONK" 1}
+.eyebrow{font-family:var(--body);font-weight:600;text-transform:uppercase;
+  letter-spacing:.28em;font-size:12.5px;color:var(--brick)}
+.label{font-family:var(--body);text-transform:uppercase;letter-spacing:.24em;
+  font-size:12.5px;color:var(--muted)}
+.serif-it{font-style:italic;font-family:var(--display)}
+.lead{font-size:1.28rem;line-height:1.6}
+
+/* ---- Masthead bar (running header) ---- */
+.masthead{background:var(--espresso);color:var(--cream)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;
+  height:38px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;
+  font-weight:600}
+.masthead .run{opacity:.78}
+.masthead .plaque{display:inline-flex;align-items:center;gap:8px}
+.plaque-10{display:inline-grid;place-items:center;width:26px;height:26px;
+  border:1px solid var(--brass);color:var(--brass);font-family:var(--display);
+  font-weight:600;letter-spacing:0;font-size:14px;border-radius:2px}
+
+/* ---- Nav ---- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(243,234,217,.92);
+  backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.brand{display:flex;align-items:baseline;gap:.5ch;font-family:var(--display);
+  font-weight:600;font-size:21px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.brand .ten{font-size:30px;line-height:.8;color:var(--brick);
+  font-variation-settings:"SOFT" 60,"WONK" 1}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0}
+.nav-links a{font-family:var(--body);text-decoration:none;font-size:15.5px;
+  letter-spacing:.02em;color:var(--espresso);opacity:.82;padding:4px 0;
+  border-bottom:1.5px solid transparent;transition:.2s}
+.nav-links a:hover,.nav-links a[aria-current]{opacity:1;border-color:var(--brick)}
+.nav-cta{display:inline-flex;align-items:center;gap:.5ch;background:var(--brick);
+  color:var(--cream)!important;padding:11px 20px;border-radius:2px;text-decoration:none;
+  font-family:var(--body);font-size:15px;letter-spacing:.02em;font-weight:600;
+  border:1px solid var(--brick);transition:.2s;white-space:nowrap}
+.nav-cta:hover{background:var(--espresso);border-color:var(--espresso)}
+.nav-burger{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--espresso)}
+.nav-burger svg{display:block}
+
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:.6ch;font-family:var(--body);
+  font-size:16px;font-weight:600;letter-spacing:.02em;padding:14px 26px;border-radius:2px;
+  text-decoration:none;cursor:pointer;transition:.2s;border:1px solid transparent}
+.btn-primary{background:var(--brick);color:var(--cream);border-color:var(--brick)}
+.btn-primary:hover{background:var(--espresso);border-color:var(--espresso)}
+.btn-ghost{background:transparent;color:var(--espresso);border-color:var(--espresso)}
+.btn-ghost:hover{background:var(--espresso);color:var(--cream)}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* ---- HERO (kino) ---- */
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;
+  align-items:flex-end;overflow:hidden;background:var(--espresso)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(46,32,24,.30)0%,rgba(46,32,24,.06)32%,rgba(46,32,24,.20)58%,rgba(46,32,24,.74)100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:var(--maxw);
+  margin:0 auto;padding:0 28px 64px;color:var(--cream)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);max-width:14ch;color:var(--cream);
+  font-weight:540;font-variation-settings:"SOFT" 50,"WONK" 1}
+.hero .hero-sub{max-width:54ch;margin:22px 0 26px;font-size:1.12rem;line-height:1.62;
+  color:rgba(243,234,217,.92)}
+.hero-meta{position:absolute;top:24px;right:28px;z-index:2;text-align:right;
+  color:var(--cream);font-family:var(--body)}
+.hero-meta .score{font-family:var(--display);font-size:1.5rem;font-weight:600;line-height:1}
+.hero-meta .score small{font-size:.95rem;opacity:.85}
+.hero-meta .cap{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.78;margin-top:4px}
+
+/* ---- Fact strip ---- */
+.facts{background:var(--espresso);color:var(--cream)}
+.facts .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;
+  padding:20px 28px;font-family:var(--body)}
+.facts span{font-size:15px;letter-spacing:.02em;opacity:.92}
+.facts .dot{opacity:.4}
+.facts b{font-family:var(--display);font-weight:600;font-variation-settings:"SOFT" 40}
+
+/* ---- Sections ---- */
+section{padding:88px 0}
+.sec-alt{background:var(--cream-2)}
+.sec-dark{background:var(--espresso);color:var(--cream)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+.sec-num{font-family:var(--display);color:var(--brass);font-size:1rem;letter-spacing:.2em}
+
+/* ---- Intro editorial / drop cap ---- */
+.intro{padding:104px 0}
+.intro .col{max-width:var(--col);margin:0 auto}
+.intro p{font-size:1.32rem;line-height:1.62}
+.dropcap::first-letter{font-family:var(--display);float:left;font-size:5.4rem;
+  line-height:.74;padding:8px 14px 0 0;color:var(--brick);font-weight:600;
+  font-variation-settings:"SOFT" 60,"WONK" 1}
+
+/* ---- Register (spis treści apartamentów) ---- */
+.register{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.register li{border-bottom:1px solid var(--line)}
+.reg-link{display:grid;grid-template-columns:auto 1fr auto auto;gap:28px;align-items:center;
+  padding:26px 6px;text-decoration:none;color:inherit;position:relative;transition:.25s}
+.reg-link:hover{background:var(--paper);padding-left:18px;padding-right:18px}
+.reg-folio{font-family:var(--display);font-size:2.2rem;color:var(--brass);
+  font-weight:600;letter-spacing:0;min-width:2.4ch;font-variation-settings:"SOFT" 50,"WONK" 1}
+.reg-name{font-family:var(--display);font-size:1.7rem;font-weight:560}
+.reg-name small{display:block;font-family:var(--body);font-size:.92rem;
+  color:var(--muted);font-weight:400;letter-spacing:.01em;margin-top:3px}
+.reg-meta{font-family:var(--body);font-size:14px;letter-spacing:.04em;color:var(--muted);
+  text-align:right;white-space:nowrap}
+.reg-thumb{width:0;height:78px;overflow:hidden;border-radius:2px;transition:width .3s ease;background:var(--cream-2)}
+.reg-thumb img{width:118px;height:78px;object-fit:cover}
+.reg-link:hover .reg-thumb{width:118px}
+.reg-arrow{color:var(--brick);font-size:1.2rem}
+
+/* ---- Zig-zag spreads (rejestr 01-09) ---- */
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;
+  padding:64px 0;border-bottom:1px solid var(--line);position:relative}
+.spread:last-child{border-bottom:0}
+.spread .media{position:relative}
+.spread .media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.spread .folio-ghost{position:absolute;font-family:var(--display);font-weight:700;
+  font-size:11rem;line-height:.7;color:var(--brass);opacity:.16;z-index:2;
+  top:-46px;font-variation-settings:"SOFT" 40,"WONK" 1;pointer-events:none}
+.spread.right .media{order:2}
+.spread.right .text{order:1}
+.spread.right .folio-ghost{right:-10px}
+.spread.left .folio-ghost{left:-10px}
+.spread .text h3{font-size:2.2rem;margin-bottom:8px}
+.spread .text .kolor{font-style:italic;font-family:var(--display);color:var(--law);font-size:1.1rem}
+.spread .text p{max-width:46ch}
+.spread .stats{display:flex;gap:24px;margin-top:18px;font-family:var(--body);
+  font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.spread .stats b{font-family:var(--display);font-weight:600;color:var(--espresso);
+  text-transform:none;letter-spacing:0;font-size:1.15rem;display:block}
+
+/* tekstura cegły jako subtelne tło */
+.brickbg{position:relative}
+.brickbg::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;
+  background-image:repeating-linear-gradient(0deg,transparent 0 30px,rgba(168,71,46,.5)30px 32px),
+  repeating-linear-gradient(90deg,transparent 0 64px,rgba(168,71,46,.5)64px 66px)}
+
+/* ---- Filters ---- */
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0 8px}
+.filt{font-family:var(--body);font-size:14px;letter-spacing:.06em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 18px;
+  border-radius:2px;cursor:pointer;transition:.2s}
+.filt:hover{border-color:var(--brick);color:var(--espresso)}
+.filt[aria-pressed="true"]{background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
+
+/* ---- Apartment template (spread) ---- */
+.hero-spread{position:relative;padding:0;background:var(--cream)}
+.hero-spread .frame{position:relative;max-width:var(--maxw);margin:0 auto;padding:56px 28px 0}
+.hero-spread figure{margin:0;position:relative}
+.hero-spread .folio-big{position:absolute;z-index:1;font-family:var(--display);
+  font-weight:700;font-size:clamp(8rem,24vw,19rem);line-height:.62;color:var(--brass);
+  opacity:.28;top:-12%;left:-1.5%;font-variation-settings:"SOFT" 40,"WONK" 1;pointer-events:none}
+.hero-spread img.kadr{position:relative;z-index:2;width:100%;max-height:74vh;
+  object-fit:cover;border-radius:2px}
+.apt-narr{max-width:var(--col);margin:0 auto}
+.apt-credit{font-family:var(--display);font-style:italic;color:var(--muted);font-size:1rem;
+  border-left:2px solid var(--brass);padding-left:16px;margin-top:8px}
+
+/* ---- Masonry gallery ---- */
+.masonry{columns:3;column-gap:18px}
+.masonry figure{margin:0 0 18px;break-inside:avoid;position:relative}
+.masonry img{width:100%;border-radius:2px;cursor:zoom-in;transition:.3s}
+.masonry img:hover{filter:brightness(1.05)}
+.masonry figcaption{font-family:var(--display);font-style:italic;color:var(--muted);
+  font-size:.92rem;margin-top:6px}
+
+/* ---- Lista typograficzna udogodnień ---- */
+.amen{columns:2;column-gap:48px;list-style:none;margin:0;padding:0}
+.amen li{break-inside:avoid;padding:13px 0;border-bottom:1px solid var(--line);
+  font-size:1.02rem;display:flex;justify-content:space-between;gap:14px}
+.amen li span{color:var(--muted);font-size:.9rem;font-style:italic;font-family:var(--display)}
+
+/* ---- Cytaty gości ---- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.quote{font-family:var(--display);font-style:italic;font-size:1.24rem;line-height:1.5}
+.quote .by{display:block;margin-top:14px;font-style:normal;font-family:var(--body);
+  font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.score-row{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;
+  border-top:1px solid var(--line);margin-top:54px;padding-top:34px}
+.score-big{font-family:var(--display);font-weight:600;font-size:3rem;line-height:.9;color:var(--brick)}
+.score-big small{font-size:1rem;color:var(--muted);font-style:italic;font-family:var(--display);display:block;
+  margin-top:6px;font-weight:400}
+
+/* ---- Dwie drogi rezerwacji ---- */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.path{background:var(--paper);border:1px solid var(--line);padding:38px;border-radius:2px}
+.path.dark{background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
+.path h3{font-size:1.7rem;margin-bottom:10px}
+.path p{font-size:1rem;color:var(--muted)}
+.path.dark p{color:rgba(243,234,217,.82)}
+.path .price{font-family:var(--display);font-size:1.1rem;color:var(--brass);margin:6px 0 18px}
+
+/* ---- Pasmo kamienica/kawiarnia ---- */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.split.rev .media{order:2}
+.split .media img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:2px}
+.fieldnote{font-family:var(--display);font-style:italic;color:var(--muted);font-size:1.1rem}
+
+/* ---- Ink map (SYGNATURA) ---- */
+.inkmap-wrap{background:var(--paper);border:1px solid var(--brass);border-radius:2px;
+  padding:18px;position:relative}
+.inkmap{width:100%;height:auto;display:block}
+.route-legend{list-style:none;margin:26px 0 0;padding:0;display:grid;
+  grid-template-columns:repeat(2,1fr);gap:14px 40px}
+.route-legend li{display:flex;justify-content:space-between;gap:14px;
+  border-bottom:1px dotted var(--brass);padding-bottom:8px;font-size:1rem}
+.route-legend b{font-family:var(--display);color:var(--brick);font-weight:600}
+
+/* ---- Mapa embed ---- */
+.mapbox{border:1px solid var(--line);border-radius:2px;overflow:hidden;line-height:0}
+.mapbox iframe{width:100%;height:380px;border:0;filter:saturate(.85) sepia(.06)}
+
+/* ---- Teaser cards (linki do podstron) ---- */
+.teasers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.teaser{display:block;text-decoration:none;color:inherit;background:var(--paper);
+  border:1px solid var(--line);border-radius:2px;overflow:hidden;transition:.25s}
+.teaser:hover{transform:translateY(-3px);box-shadow:0 16px 40px -28px rgba(46,32,24,.7)}
+.teaser img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.teaser .body{padding:22px 24px 26px}
+.teaser h3{font-size:1.4rem;margin-bottom:6px}
+.teaser p{font-size:.96rem;color:var(--muted);margin:0}
+
+/* ---- Footer masthead ---- */
+.foot{background:var(--espresso);color:var(--cream);padding:72px 0 40px}
+.foot .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot .brand{color:var(--cream);font-size:30px;margin-bottom:14px}
+.foot .brand .ten{color:var(--terra)}
+.foot a{color:rgba(243,234,217,.84);text-decoration:none}
+.foot a:hover{color:var(--cream)}
+.foot h4{font-family:var(--body);text-transform:uppercase;letter-spacing:.22em;
+  font-size:12px;color:var(--brass);margin:0 0 14px;font-weight:700}
+.foot ul{list-style:none;margin:0;padding:0;line-height:2.1}
+.foot .copy{border-top:1px solid rgba(243,234,217,.16);margin-top:48px;padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:13px;letter-spacing:.04em;color:rgba(243,234,217,.6)}
+
+/* ---- Sticky reserve (mobile) ---- */
+.sticky-reserve{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;
+  background:var(--espresso);border-top:1px solid var(--brass);
+  padding:10px 16px;gap:10px;align-items:center;justify-content:space-between}
+.sticky-reserve .sr-score{color:var(--cream);font-family:var(--display);font-size:1rem}
+.sticky-reserve .sr-score small{color:var(--brass);display:block;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;font-family:var(--body)}
+.sticky-reserve a{flex:0 0 auto}
+
+/* ---- Lightbox ---- */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(20,12,8,.94);display:none;
+  align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:88vh;border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .x{position:absolute;top:22px;right:28px;color:var(--cream);font-size:30px;
+  background:none;border:0;cursor:pointer;font-family:var(--display)}
+
+/* ---- Page masthead (typograficzny nagłówek podstrony) ---- */
+.pagemast{padding:64px 0 28px;border-bottom:1px solid var(--line)}
+.pagemast .eyebrow{margin-bottom:14px;display:block}
+.pagemast h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:16ch}
+.pagemast p{max-width:52ch;color:var(--muted);font-size:1.16rem;margin-top:18px}
+
+/* ---- Photo pagehead (full-bleed) ---- */
+.pagehead{position:relative;min-height:54vh;min-height:54svh;display:flex;align-items:flex-end;
+  overflow:hidden;background:var(--espresso)}
+.pagehead img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pagehead .ph-scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(46,32,24,.18)0%,rgba(46,32,24,.12)45%,rgba(46,32,24,.78)100%)}
+.pagehead .ph-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
+  width:100%;padding:0 28px 48px;color:var(--cream)}
+.pagehead h1{color:var(--cream);font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch}
+.pagehead .eyebrow{color:var(--terra)}
+
+.divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto}
+
+/* ---- Responsive ---- */
+@media(max-width:900px){
+  body{font-size:18px}
+  .nav-links{position:fixed;inset:68px 0 auto 0;flex-direction:column;background:var(--cream);
+    border-bottom:1px solid var(--line);padding:18px 28px 26px;gap:18px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:18px}
+  .nav .nav-cta{display:none}
+  .nav-burger{display:block}
+  .spread,.split,.paths,.quotes,.teasers,.foot .grid{grid-template-columns:1fr;gap:30px}
+  .spread.right .media,.split.rev .media{order:0}
+  .spread .folio-ghost{font-size:7rem;top:-30px}
+  .masonry{columns:2}
+  .quotes{gap:30px}
+  .route-legend{grid-template-columns:1fr}
+  .sticky-reserve{display:flex}
+  body{padding-bottom:64px}
+  section{padding:62px 0}
+  .hero-meta{top:auto;bottom:auto;position:absolute;top:14px;right:18px}
+}
+@media(max-width:560px){
+  .masonry,.amen{columns:1}
+  .reg-link{grid-template-columns:auto 1fr;gap:16px}
+  .reg-meta,.reg-thumb{display:none}
+  .hero-spread .folio-big{opacity:.16}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}

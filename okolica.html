@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Okolica - Stary Płock spacerem · Nowy Rynek 10</title>
+<meta name="description" content="Z apartamentów Nowy Rynek 10 wszystko jest spacerem: Tumska 2 min, Katedra na Wzgórzu Tumskim 4 min, bulwary nad Wisłą 6 min. Ręczna mapa Starego Miasta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="masthead"><div class="wrap">
+  <span class="run">Płock · Stare Miasto · Nowy Rynek 10</span>
+  <span class="plaque"><span class="plaque-10">10</span><span>est. w zabytkowej kamienicy</span></span>
+</div></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">Nowy Rynek <span class="ten">10</span></a>
+  <ul class="nav-links">
+    <li><a href="apartamenty.html">Apartamenty</a></li>
+    <li><a href="apartament.html">Apartament</a></li>
+    <li><a href="kamienica.html">Kamienica</a></li>
+    <li><a href="okolica.html" aria-current="page">Okolica</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="rezerwacja.html">Rezerwacja</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
+  <button class="nav-burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+</div></nav>
+
+<section class="pagemast"><div class="wrap">
+  <span class="eyebrow">Stary Płock spacerem</span>
+  <h1>Mapa, na której wszystko jest blisko</h1>
+  <p>Narysowana ręcznie, bo tak najlepiej widać sedno tego adresu: z bramy przy Nowym Rynku 10 do najważniejszych miejsc Płocka dochodzisz w kilka minut.</p>
+</div></section>
+
+<!-- SYGNATURA: ręczna mapa -->
+<section style="padding-top:42px">
+  <div class="wrap" style="display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:start">
+    <div class="inkmap-wrap">
+      <svg class="inkmap" viewBox="0 0 640 460" role="img" aria-label="Ręcznie rysowana atramentowa mapa Starego Miasta Płocka z trasami spaceru od kamienicy">
+        <rect width="640" height="460" fill="#F8F2E6"/>
+        <!-- Wisła -->
+        <path d="M-10 410 C140 370 230 430 340 396 C460 360 560 410 650 388 L650 470 L-10 470 Z" fill="#7C6E97" opacity=".14"/>
+        <path d="M-10 410 C140 370 230 430 340 396 C460 360 560 410 650 388" stroke="#7C6E97" stroke-width="1.4" fill="none" opacity=".6"/>
+        <text x="60" y="445" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#7C6E97">rzeka Wisła</text>
+        <!-- siatka uliczek (atramentowa, nierówna) -->
+        <g stroke="#2E2018" stroke-width="1.1" fill="none" opacity=".5" stroke-linecap="round">
+          <path d="M70 70 C200 90 360 60 560 96"/>
+          <path d="M60 150 C220 168 380 140 600 172"/>
+          <path d="M120 40 C140 160 110 260 150 360"/>
+          <path d="M320 36 C300 150 330 250 300 350"/>
+          <path d="M470 60 C455 160 500 250 470 350"/>
+          <path d="M40 250 C220 270 420 246 610 282"/>
+        </g>
+        <!-- kwartał Starego Rynku -->
+        <rect x="250" y="150" width="130" height="86" fill="none" stroke="#C2703D" stroke-width="1.2" opacity=".55" rx="3"/>
+        <text x="262" y="198" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="#C2703D">Stary Rynek</text>
+        <!-- trasy kropkowane od kamienicy -->
+        <g stroke="#A8472E" stroke-width="2" stroke-dasharray="2 6" fill="none" stroke-linecap="round">
+          <path d="M300 250 C260 210 230 170 210 150"/>            <!-- Tumska -->
+          <path d="M300 250 C360 210 420 150 470 96"/>             <!-- Katedra -->
+          <path d="M300 250 C320 320 330 370 345 396"/>           <!-- bulwary -->
+          <path d="M300 250 C220 260 150 256 95 252"/>            <!-- parking -->
+        </g>
+        <!-- punkty docelowe -->
+        <g font-family="Fraunces, serif" font-style="italic" font-size="14">
+          <circle cx="210" cy="150" r="4" fill="#A8472E"/><text x="120" y="138" fill="#A8472E">Tumska · 2 min</text>
+          <circle cx="470" cy="96" r="4" fill="#A8472E"/><text x="486" y="92" fill="#A8472E">Katedra · 4 min</text>
+          <circle cx="345" cy="396" r="4" fill="#A8472E"/><text x="356" y="392" fill="#A8472E">bulwary · 6 min</text>
+          <circle cx="95" cy="252" r="4" fill="#A8472E"/><text x="22" y="246" fill="#A8472E">parking · 1 min</text>
+        </g>
+        <!-- pinezka kamienicy -->
+        <g transform="translate(300,250)">
+          <path d="M0 4 C-13 -18 13 -18 0 4Z" fill="#A8472E"/>
+          <circle cx="0" cy="-12" r="8" fill="#A8472E"/>
+          <circle cx="0" cy="-12" r="3.4" fill="#F8F2E6"/>
+        </g>
+        <text x="300" y="284" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#2E2018">Nowy Rynek 10</text>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow">Trasy spaceru</span>
+      <h2 style="font-size:clamp(1.6rem,3.2vw,2.2rem);margin:12px 0 22px">Z bramy, na piechotę</h2>
+      <ul class="route-legend" style="grid-template-columns:1fr">
+        <li><span>Deptak Tumska</span><b>2 min</b></li>
+        <li><span>Stary Rynek</span><b>3 min</b></li>
+        <li><span>Katedra na Wzgórzu Tumskim</span><b>4 min</b></li>
+        <li><span>Bulwary nad Wisłą</span><b>6 min</b></li>
+        <li><span>Parking miejski naprzeciw</span><b>1 min</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- przewodnik gościa -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="sec-num">Przewodnik gościa</span><h2>Co zobaczyć, idąc od progu</h2></div></div>
+    <div class="col narrow" style="max-width:68ch;margin:0">
+      <p class="lead">Skręć w lewo i po dwóch minutach jesteś na <strong>Tumskiej</strong> - deptaku, przy którym życie Płocka toczy się od rana: kawiarnie, lody, witryny w starych kamienicach. Idź nią dalej, a doprowadzi Cię na <strong>Wzgórze Tumskie</strong>, gdzie nad miastem stoi <strong>Katedra</strong> z sarkofagami polskich władców. Stamtąd kilka kroków na taras widokowy i w dół, na <strong>bulwary nad Wisłą</strong> - najszersza polska rzeka rozlewa się tu jak morze, a wieczorem słońce schodzi prosto w wodę.</p>
+      <p style="margin-top:18px">Po drodze mijasz <strong>Stary Rynek</strong> z ratuszem i restauracjami, mnóstwo miejsc na obiad i na lody. Wracasz na noc do swojego apartamentu, a samochód przez cały pobyt stoi za darmo na parkingu naprzeciw kamienicy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- mapa embed po lat/lng -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div><span class="sec-num">Dojazd</span><h2>Nowy Rynek 10 na mapie</h2></div>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=52.5475119,19.6937603" target="_blank" rel="noopener">Otwórz w Mapach Google</a>
+    </div>
+    <div class="mapbox">
+      <iframe loading="lazy" title="Mapa - Nowy Rynek 10, Płock" src="https://maps.google.com/maps?q=52.5475119,19.6937603&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap">
+  <div class="grid">
+    <div>
+      <div class="brand">Nowy Rynek <span class="ten">10</span></div>
+      <p style="color:rgba(243,234,217,.78);max-width:34ch">Dziewięć apartamentów z charakterem w zabytkowej kamienicy w sercu starego Płocka. Na dobę albo na dłużej.</p>
+    </div>
+    <div><h4>Adres</h4><ul><li>Nowy Rynek 10</li><li>09-400 Płock</li><li>Stare Miasto</li><li><a href="okolica.html">Jak dojść i co w okolicy</a></li></ul></div>
+    <div><h4>Kontakt</h4><ul><li>Gospodyni: Beata Kamińska</li><li><a href="tel:+48666209961">666 209 961</a></li><li><a href="https://wa.me/48666209961" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Rezerwuj na Booking</a></li></ul></div>
+  </div>
+  <div class="copy"><span>© 2026 Apartamenty Nowy Rynek 10, Płock</span><span>Projekt strony: Krzysztof Brzeziński</span></div>
+</div></footer>
+
+<div class="sticky-reserve">
+  <span class="sr-score">9,6<small>ocena lokalizacji · Booking</small></span>
+  <a class="btn btn-primary" href="https://www.booking.com/hotel/pl/nowy-rynek-10.pl.html" target="_blank" rel="noopener">Sprawdź dostępność</a>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
